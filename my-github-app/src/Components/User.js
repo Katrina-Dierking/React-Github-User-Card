@@ -1,35 +1,63 @@
 import React from 'react';
 import axios from 'axios';
-import MyInfo from './MyInfo';
+import Followers from './Followers';
+
 
 class User extends React.Component {
-    state = {
-    name: [],
+    constructor() {
+        super();
+        this.state = {
+            user: {},
+            followers: []
+        }; 
     }
 
-    componentDidMount (){ 
-    axios 
-        .get ("https://api.github.com/users/Katrina-Dierking")
-        .then (res => {
-            this.setState ({
-            img: res.data.avatar_url,
-            name: res.data.name,
-            info: res.data.bio,
+
+    componentDidMount = () => { 
+    axios.get ("https://api.github.com/users/Katrina-Dierking")
+         .then (res => { console.log(res.data);
+          this.setState ({
+          user: res.data,
+    
         });
     })
-        .catch (error => console.log(error.res.data));
-}
+        .catch (error => console.log(error));
 
-     render () {
+
+        axios.get ("https://api.github.com/users/Katrina-Dierking/followers")
+        .then (res => { console.log(res.data);
+        this.setState ({
+        followers: res.data,
+        });
+    })
+        .catch (error => console.log(error));
+    };
+
+
+    render () {
+        const { user } = this.state;
+        const { followers } = this.state;
         return (
             <>
-            <MyInfo 
-                img = {this.state.avatar_url}
-                name = {this.state.name}
-                info = {this.state.bio}
-                />
+               <div className = "github-layout">
+                   <div className = "my-profile-section">
+                       <img src = {user.avatar_url} alt = "My GitHub Act" className = "profile-img" /> 
+                       <h1> {user.name}</h1>
+                       <a href = {user.html_url} target = "blank" >
+                           My Profile
+                       </a>
+                   </div>
+
+                   <div className = "followers-section">
+                       <h4>My Followers: </h4>
+                       {followers.map (follower => {
+                           return <Followers follower = {follower} />
+                       })}
+                   </div>
+               </div>
             </>
-        )
+        
+        );
      }
 }
 
