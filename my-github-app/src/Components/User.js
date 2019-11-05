@@ -3,21 +3,20 @@ import axios from 'axios';
 import Followers from './Followers';
 
 
+
 class User extends React.Component {
-    constructor() {
-        super();
-        this.state = {
+    state = {
             user: {},
             followers: []
         }; 
-    }
+    
 
 
     componentDidMount = () => { 
     axios.get ("https://api.github.com/users/Katrina-Dierking")
-         .then (res => { console.log(res.data);
+         .then (result => { console.log(result);
           this.setState ({
-          user: res.data,
+          user: result.data,
     
         });
     })
@@ -25,9 +24,9 @@ class User extends React.Component {
 
 
         axios.get ("https://api.github.com/users/Katrina-Dierking/followers")
-        .then (res => { console.log(res.data);
+        .then (result => { console.log(result);
         this.setState ({
-        followers: res.data,
+        followers: result.data,
         });
     })
         .catch (error => console.log(error));
