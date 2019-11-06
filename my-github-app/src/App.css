@@ -11,7 +11,7 @@
 }
 
 .top {
-  padding: 2%;
+  padding: 1%;
   background-color:black;
   margin: 2%;
   border: 3px solid darkgrey;
@@ -23,15 +23,15 @@
 }
 
 .profile-img {
-  max-width: 30%;
-  
+  margin-top: 5%;
+  max-width: 40%;
 }
 
 .my-profile-section { 
-  margin-left: 35%;
-  border: 2.5px double black;
+  max-width:50%;
+  margin-left: 38%;
   border-radius: 5%;
-  padding: 1%;
+  padding:.5%;
   box-shadow: 5px 5px 5px slategrey;
 }
 
