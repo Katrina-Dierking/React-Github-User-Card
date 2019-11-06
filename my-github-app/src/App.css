@@ -1,0 +1,69 @@
+.App {
+  text-align: center;
+}
+
+.app-header h1 {
+  font-family: The Wild Hammers;
+  font-size: 40px;
+  color: white;
+  margin-left: 7%;
+
+}
+
+.top {
+  padding: 1%;
+  background-color:black;
+  margin: 2%;
+  border: 3px solid darkgrey;
+  box-shadow: 5px 5px 5px slategrey;
+  max-width: 95%;
+}
+.github-layout {
+  max-width: 80%;
+}
+
+.profile-img {
+  margin-top: 5%;
+  max-width: 40%;
+}
+
+.my-profile-section { 
+  max-width:50%;
+  margin-left: 38%;
+  border-radius: 5%;
+  padding:.5%;
+  box-shadow: 5px 5px 5px slategrey;
+}
+
+.followers-section {
+  max-width: 40%;
+ display: inline-block;
+ margin-left: 35%;
+
+}
+
+.followers-section h1, h4 {
+  font-family: The Wild Hammers;
+  font-size: 25px;
+}
+
+.follower-img {
+  max-width:70%;
+  border: 2px solid black;
+  box-shadow: 5px 5px 5px black;
+  border-radius: 2%;
+}
+
+.follower-box{ 
+  border: 1px solid slategrey;
+  padding-top: 5%;
+  margin: 4%;
+  background-color: lightgrey;
+  border-radius: 2%;
+  box-shadow: 5px 5px 5px black;
+
+}
+
+.follower-box h2 {
+  font-family: The Wild Hammers;
+}
